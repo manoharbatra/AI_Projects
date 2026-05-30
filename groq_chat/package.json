@@ -1,0 +1,13 @@
+{
+  "name": "google_chat",
+  "version": "1.0.0",
+  "description": "Simple Node.js chat app using Gemini Flash model",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.4"
+  }
+}

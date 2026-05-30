@@ -1,0 +1,22 @@
+{
+  "name": "ai-voice-assistant",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.18",
+    "dotenv": "^17.4.2",
+    "groq-sdk": "^1.2.1",
+    "gtts": "^0.2.1",
+    "node-record-lpcm16": "^1.0.1",
+    "play-sound": "^1.1.6"
+  }
+}
