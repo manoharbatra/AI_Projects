@@ -55,16 +55,26 @@ async function getWeather(city) {
 
 // Check if user's message contains weather-related keywords
 function detectWeatherIntent(text) {
-  return (
-    text.toLowerCase().includes("weather") ||
-    text.toLowerCase().includes("temperature")
-  );
+  // Match common weather related intents (case-insensitive)
+  return /weather|temperature|forecast/i.test(text);
 }
 
 // Extract city name from message (expects format: "... in CityName")
 function extractCity(text) {
-  const words = text.split("in ");
-  return words[1]?.trim();
+  // Prefer explicit "in <city>" or "at <city>"
+  const m = text.match(/(?:in|at)\s+(.+)/i);
+  if (m && m[1]) return m[1].trim();
+
+  // Fallback: if user typed like "weather Delhi", try the last token
+  const tokens = text.split(/\s+/).filter(Boolean);
+  if (tokens.length >= 2) {
+    const last = tokens[tokens.length - 1].replace(/[?.,!]/g, "");
+    if (!/weather|temperature|forecast|in|at|the|is/i.test(last)) {
+      return last.trim();
+    }
+  }
+
+  return null;
 }
 
 // Send conversation to Groq API and get AI-generated response
@@ -105,19 +115,21 @@ async function sendMessage(text) {
   if (detectWeatherIntent(text)) {
     const city = extractCity(text);
 
+    console.log("Detected weather intent. Extracted city:", city);
     if (city) {
       try {
         // Fetch weather data for the extracted city
         const weather = await getWeather(city);
+        console.log("Weather fetched:", weather);
 
         // Format weather data into a readable summary
         const weatherSummary = `
-City: ${weather.name}
-Temperature: ${weather.main.temp}°C
-Feels Like: ${weather.main.feels_like}°C
-Humidity: ${weather.main.humidity}%
-Condition: ${weather.weather[0].description}
-`;
+      City: ${weather.name}
+      Temperature: ${weather.main.temp}°C
+      Feels Like: ${weather.main.feels_like}°C
+      Humidity: ${weather.main.humidity}%
+      Condition: ${weather.weather[0].description}
+      `;
 
         // Add weather data to conversation context for AI to use
         conversation.push({
@@ -127,7 +139,7 @@ Condition: ${weather.weather[0].description}
         });
 
       } catch (err) {
-        console.log("Weather API failed");
+        console.error("Weather API failed:", err.response?.data || err.message || err);
       }
     }
   }

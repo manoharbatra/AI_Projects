@@ -13,7 +13,8 @@ async function generateImage() {
       model: "black-forest-labs/FLUX.1-schnell",
 
       inputs:
-        "A futuristic Indian cyberpunk city at night with flying cars, ultra realistic, cinematic lighting",
+        // "A futuristic Indian cyberpunk city at night with flying cars, ultra realistic, cinematic lighting",
+        "A man holding a bouquet of flowers, photorealistic, soft lighting, 85mm lens",
 
       parameters: {
         num_inference_steps: 30,

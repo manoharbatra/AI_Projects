@@ -73,6 +73,9 @@ async function sendMessage(text) {
     content: answer,
   });
 
+  console.log("\nConversation History:");
+  console.log(JSON.stringify(conversation, null, 2));
+
   return answer;
 }
 

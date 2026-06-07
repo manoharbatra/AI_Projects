@@ -32,7 +32,7 @@ rl.question("Enter text: ", (text) => {
   // Language codes supported by gTTS
   // en = English
   // hi = Hindi
-  const gtts = new gTTS(text, "en");
+  const gtts = new gTTS(text, "hi");
 
   // Save the generated audio to an MP3 file
   gtts.save("./output/speech.mp3", function (err) {
