@@ -1,0 +1,23 @@
+Manohar Batra
+
+Frontend Architect
+
+Skills
+
+React
+NodeJS
+JavaScript
+TypeScript
+LangChain
+RAG
+MCP
+Groq
+AI Engineering
+
+Experience
+
+10 years of frontend development experience.
+
+Worked extensively with React and modern web technologies.
+
+Built AI-powered applications using LangChain, Groq and Vector Databases.

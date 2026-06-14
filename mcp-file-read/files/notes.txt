@@ -1,0 +1,5 @@
+Today's Tasks
+
+1. Learn MCP
+2. Learn ChromaDB
+3. Build AI Agent

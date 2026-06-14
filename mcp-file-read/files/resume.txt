@@ -1,0 +1,11 @@
+Manohar Batra
+
+Frontend Architect
+
+Skills:
+React
+NodeJS
+AI
+LangChain
+RAG
+MCP

@@ -1,0 +1,17 @@
+{
+  "name": "mcp-file-read",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+     "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}

@@ -1,0 +1,26 @@
+Skills
+
+React
+NodeJS
+TypeScript
+
+Projects
+
+Project A
+Built a React dashboard
+
+Project B
+Built a LangChain RAG application
+
+Project C
+Built MCP tools
+
+Experience
+
+Frontend Architect
+
+10 years experience
+
+Education
+
+B.Tech Computer Science
